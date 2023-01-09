@@ -1,3 +1,4 @@
 disk.img
 
 00.bootloader/bootloader.bin
+01.kernel32/VirtualOS.bin

@@ -1,18 +1,18 @@
-all: bootloader disk.img
+all: 00.bootloader/bootloader.bin 01.kernel32/kernel32.bin disk.img
 
-bootloader:
+00.bootloader/bootloader.bin:
 	@echo [+] Build Boot Loader
 	make -C 00.bootloader
 	@echo [+] Build complete
 
-kernel32:
+01.kernel32/kernel32.bin:
 	@echo [+] Build 32-bit kernel
 	make -C 01.kernel32
 	@echo [+] Build complete
 
-disk.img: bootloader kernel32
+disk.img: 00.bootloader/bootloader.bin 01.kernel32/kernel32.bin
 	@echo [+] Disk image build start
-	cat 00.bootloader/bootloader.bin 01.kernel32/VirtualOS.bin > disk.img
+	cat $^ > disk.img
 	@echo [+] all build complete
 
 clean:

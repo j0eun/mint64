@@ -9,7 +9,7 @@ jmp 0x07c0:START
 ; MINT64 OS에 관련된 환경 설정 값
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-TOTALSECTORCOUNT: dw 1024
+TOTALSECTORCOUNT: dw 1
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ; 코드 영역
